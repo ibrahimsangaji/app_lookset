@@ -32,11 +32,7 @@
                             @foreach ($assets as $asset)
                                 <tr>
                                     <td>{{ $asset->asset_number }}</td>
-<<<<<<< HEAD
                                     <td>{{ $asset->sto_number }}</td>
-=======
-                                    <td> </td>
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646
                                     <td>{{ $asset->name }}</td>
                                     <td>{{ $asset->device->name }}</td>
                                     <td>{{ $asset->categorystatus->category }}</td>

@@ -56,11 +56,7 @@
                 <div class="mb-3 row">
                     <label for="inputName" class="col-sm-2 col-form-label">Name</label>
                     <div class="col-sm-10">
-<<<<<<< HEAD
                         <input type="text" class="form-control" id="inputName" name="name" placeholder="Name" readonly>
-=======
-                        <input type="text" class="form-control" value="Name" aria-label="Disabled input example" disabled readonly>
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646
                     </div>
                 </div>
                 <div class="mb-3 row">

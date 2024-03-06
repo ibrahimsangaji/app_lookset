@@ -1,15 +1,10 @@
-<<<<<<< HEAD
 @extends('tampilan')
-=======
-@extends('body')
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646
 
 @section('content')
     <!-- Begin Page Content -->
     <div class="container-fluid">
         <div class="card shadow mb-4">
 
-<<<<<<< HEAD
             <!-- Tampilkan pesan sukses jika ada -->
             @if (Session::has('success'))
                 <div class="alert alert-success">
@@ -27,12 +22,6 @@
                 <h3 class="font-weight-bold text-primary">Delete Assets</h3>
 
                 @if($userRole == 'supervisor' || $userRole == 'admin')
-=======
-            <div class="card-header py-3 d-flex align-items-center">
-                <h3 class="font-weight-bold text-primary">Delete Assets</h3>
-
-                @if($userRole == 'supervisor' || auth()->user()->role == 'admin')
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646
                     <h3 class="font-weight-bold text-primary ml-auto">
                         <a href="/assets">Assets</a>
                     </h3>
@@ -53,7 +42,6 @@
                             </tr>
                         </thead>
                         <tbody>
-<<<<<<< HEAD
                             @foreach ($assets as $asset)
                                 <tr>
                                     <td>{{ $asset->asset_number }}</td>
@@ -75,23 +63,6 @@
                                             </a>
                                         @endif
 
-=======
-
-                            @foreach ($assets as $asset)
-                                <tr>
-                                    <td>{{ $asset->asset_number }}</td>
-                                    <td> </td>
-                                    <td>{{ $asset->name }}</td>
-                                    <td>{{ $asset->device->name }}</td>
-                                    <td>
-                                        @if($asset->approval_status == 'Approved')
-                                            {{ $asset->categorystatus->category }}
-                                        @else
-                                            {{ $asset->approval_status }}
-                                        @endif
-                                    </td>
-                                    <td class="text-center">
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646
                                         {{-- delete --}}
                                         <button type="button" class="btn btn-danger text-link" data-toggle="modal" data-target="#rejectModal{{ $asset->id }}">
                                             <i class="bi bi-x-circle-fill"></i>
@@ -108,11 +79,7 @@
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-<<<<<<< HEAD
                                                         <p>Are you sure you want to delete assets based on asset number {{ $asset->asset_number }}?</p>
-=======
-                                                        <p>Are you sure you want to delete assets based on asset number{{ $asset->asset_number }}?</p>
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -125,27 +92,14 @@
                                                 </div>
                                             </div>
                                         </div>
-<<<<<<< HEAD
                                     </td>
                                 </tr>
                             @endforeach
-=======
-
-                                    </td>
-                                </tr>
-                            @endforeach
-
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646
                         </tbody>
                     </table>
                 </div>
             </div>
-<<<<<<< HEAD
 
         </div>
-=======
-        </div>
-
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646
     </div>
 @endsection

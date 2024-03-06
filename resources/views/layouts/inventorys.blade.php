@@ -27,7 +27,6 @@
                                     <td>{{ $asset->asset_number }}</td>
                                     <td>{{ $asset->name }}</td>
                                     <td>{{ $asset->device->name }}</td>
-<<<<<<< HEAD
                                     <td>
                                         @if ($asset->category_statuses_id == 5)
                                             Ever Used
@@ -36,10 +35,6 @@
                                         @endif
                                     </td>
                                     <td>{{ $asset->inbound->rack->explanation }}</td>
-=======
-                                    <td>{{ $asset->CategoryStatus->category }}</td>
-                                    <td>{{ $asset->rack->explanation }}</td>
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646
                                 </tr>
                             @endforeach
                         </tbody>

@@ -26,7 +26,6 @@
                             </tr>
                         </thead>
                         <tbody>
-<<<<<<< HEAD
                             @foreach ($groupedInlocations as $locNumber => $group)
                                 <tr>
                                     <td>{{ $locNumber }}</td>
@@ -39,56 +38,6 @@
                                     </td>
                                 </tr>
                             @endforeach
-=======
-                            <tr>
-                                <td>LN-0000001</td>
-                                <td>IT</td>
-                                <td class="text-center">2</td>
-                                <td class="text-center">
-                                    <a href="/locations/detail" class="btn btn-primary"><i class="bi bi-eye-fill"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>LN-0000002</td>
-                                <td>HC</td>
-                                <td class="text-center">1</td>
-                                <td class="text-center">
-                                    <a href="/locations/detail" class="btn btn-primary"><i class="bi bi-eye-fill"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>LN-0000003</td>
-                                <td>Finance</td>
-                                <td class="text-center">4</td>
-                                <td class="text-center">
-                                    <a href="/locations/detail" class="btn btn-primary"><i class="bi bi-eye-fill"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>LN-0000004</td>
-                                <td>Secretary</td>
-                                <td class="text-center">10</td>
-                                <td class="text-center">
-                                    <a href="/locations/detail" class="btn btn-primary"><i class="bi bi-eye-fill"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>LN-0000005</td>
-                                <td>HRD</td>
-                                <td class="text-center">13</td>
-                                <td class="text-center">
-                                    <a href="/locations/detail" class="btn btn-primary"><i class="bi bi-eye-fill"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>LN-0000006</td>
-                                <td>Management</td>
-                                <td class="text-center">8</td>
-                                <td class="text-center">
-                                    <a href="/locations/detail" class="btn btn-primary"><i class="bi bi-eye-fill"></i></a>
-                                </td>
-                            </tr>
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646
                         </tbody>
                     </table>
                 </div>

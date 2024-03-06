@@ -10,15 +10,12 @@
                     {{ Session::get('success') }}
                 </div>
             @endif
-<<<<<<< HEAD
             <!-- Tampilkan pesan error jika ada -->
             @if (Session::has('error'))
                 <div class="alert alert-danger">
                     {{ Session::get('error') }}
                 </div>
             @endif
-=======
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646
 
             <div class="card-header py-3">
                 <h3 class="font-weight-bold text-primary">Approval</h3>
@@ -43,7 +40,6 @@
                                             {{ $outbound->condition->type }}
                                         @endif
                                     </td>
-<<<<<<< HEAD
                                     @if ($outbound->conditions_id == 6)
                                         <td class="text-center">
                                             <button type="button" class="btn btn-success mr-3" data-toggle="modal" data-target="#approvalModal{{ $outbound->id }}">
@@ -72,65 +68,6 @@
                                                                 <button type="submit" class="btn btn-success">Approved</button>
                                                             </form>
                                                         </div>
-=======
-                                    <td class="text-center">
-                                        <form method="post" action="{{ route('approval.process', $approval->id) }}">
-                                            @csrf
-                                            <button type="button" class="btn btn-success mr-3" data-toggle="modal" data-target="#approvalModal{{ $approval->id }}">
-                                                <i class="bi bi-check-circle-fill"></i>
-                                            </button>
-                                            <button type="button" class="btn btn-danger mr-3" data-toggle="modal" data-target="#rejectModal{{ $approval->id }}">
-                                                <i class="bi bi-x-circle-fill"></i>
-                                            </button>
-                                            <a href="{{ route('asset.detail', $approval->id) }}" class="btn btn-primary"><i class="bi bi-eye-fill"></i></a>
-                                        </form>
-
-                                        <!-- Modal for Approval Confirmation -->
-                                        <div class="modal fade" id="approvalModal{{ $approval->id }}" tabindex="-1" role="dialog" aria-labelledby="approvalModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="approvalModalLabel">Approval Confirmation</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <p>Are you sure you want to approve this request?</p>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                                        <form method="post" action="{{ route('approval.process', $approval->id) }}">
-                                                            @csrf
-                                                            <input type="hidden" name="action" value="Approved">
-                                                            <button type="submit" class="btn btn-success">Approve</button>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Modal for Reject Confirmation -->
-                                        <div class="modal fade" id="rejectModal{{ $approval->id }}" tabindex="-1" role="dialog" aria-labelledby="rejectModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="rejectModalLabel">Reject Confirmation</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <p>Are you sure you want to reject this approval?</p>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                                        <form method="post" action="{{ route('approval.process', $approval->id) }}">
-                                                            @csrf
-                                                            <input type="hidden" name="action" value="Reject">
-                                                            <button type="submit" class="btn btn-danger">Reject</button>
-                                                        </form>
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646
                                                     </div>
                                                 </div>
                                             </div>
