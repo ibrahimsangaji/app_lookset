@@ -11,18 +11,14 @@ use App\Models\Software;
 use App\Models\CategoryStatus;
 use App\Models\Condition;
 use App\Models\Document;
-<<<<<<< HEAD
 use App\Models\Inbound;
 use App\Models\Inlocation;
 use App\Models\Outbound;
-=======
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-<<<<<<< HEAD
     function index()
     {
         $totalAssets = Asset::count();
@@ -89,34 +85,6 @@ class AdminController extends Controller
             'totalRepair',
             'totalLost'
         ));
-=======
-    function index() {
-        $totalAssets = Asset::count();
-        $totalInbound = Asset::whereIn('category_statuses_id', [1, 2])->count();
-
-        return view('layouts.wellcome', compact('totalAssets', 'totalInbound'));
-    }
-
-    function admin() {
-        $totalAssets = Asset::count();
-        $totalInbound = Asset::whereIn('category_statuses_id', [1, 2])->count();
-
-        return view('layouts.wellcome', compact('totalAssets', 'totalInbound'));
-    }
-
-    function staff() {
-        $totalAssets = Asset::count();
-        $totalInbound = Asset::whereIn('category_statuses_id', [1, 2])->count();
-
-        return view('layouts.wellcome', compact('totalAssets', 'totalInbound'));
-    }
-
-    function supervisor() {
-        $totalAssets = Asset::count();
-        $totalInbound = Asset::whereIn('category_statuses_id', [1, 2])->count();
-
-        return view('layouts.wellcome', compact('totalAssets', 'totalInbound'));
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646
     }
 
     public function markAllAsRead(Request $request)
@@ -159,16 +127,9 @@ class AdminController extends Controller
         ]);
     }
 
-<<<<<<< HEAD
     public function inventorys()
     {
         $assets = Asset::with(['device', 'software'])->whereIn('assets.category_statuses_id', [1, 5])->get();
-=======
-    function inventorys() {
-        $assets = Asset::with(['device', 'rack', 'software', 'categorystatus', 'condition'])
-        ->whereIn('category_statuses_id', [1, 2])
-        ->get();
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646
 
         // Mengirim data ke view
         return view('layouts.inventorys', compact('assets'));
@@ -185,49 +146,11 @@ class AdminController extends Controller
         return view('layouts.assets', compact('assets', 'userRole'));
     }
 
-<<<<<<< HEAD
     function deleteAssets()
     {
         // Mengambil data assets dengan relasi device dan category_statuses
         $assets = Asset::with(['device', 'categorystatus', 'inbound'])->get();
 
-=======
-    function deleteAssets() {
-        // Mengambil data assets dengan relasi device dan category_statuses
-        $assets = Asset::with(['device', 'categorystatus'])->get();
-
-        // Mengambil data user
-        $userRole = auth()->user()->role;
-
-        return view('layouts.deleteAsset', compact('assets', 'userRole'));
-    }
-
-    public function destroy(Asset $asset)
-    {
-        try {
-            $asset->delete();
-            return redirect('/assets/delete')->with('success', 'Asset deleted successfully!');
-        } catch (QueryException $e) {
-            // Tangani kesalahan lainnya
-            return redirect('/assets/delete')->with('error', 'Error deleting the Asset.');
-        }
-    }
-
-    function outbound(Request $request) {
-        $assets = Asset::where('category_statuses_id', [1, 2])->get();
-        $locations = Location::all();
-        $data = [
-            ['name'=>'Outbound'],
-            ['name'=>'Inbound'],
-            ['name'=>'middlebound'],
-
-        ];
-
-        return view('layouts.outbounds', compact('locations', 'assets','data'));
-    }
-
-    function locations() {
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646
         // Mengambil data user
         $userRole = auth()->user()->role;
 
@@ -258,7 +181,6 @@ class AdminController extends Controller
         return redirect()->route('asset.deleteView');
     }
 
-<<<<<<< HEAD
     public function delete(Asset $asset)
     {
         try {
@@ -266,12 +188,6 @@ class AdminController extends Controller
             if (!$asset->inbound && !$asset->outbound) {
                 return redirect('/assets/delete')->with('error', 'Invalid asset data.');
             }
-=======
-    function editLocations() {
-        return view('layouts.editLocation');
-    }
-
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646
 
             // Cek kondisi sebelum melakukan penghapusan
             if ($asset->inbound && $asset->sto_number === null && ($asset->inbound->approval_status === 'Reject' || $asset->category_statuses_id == 7)) {
@@ -386,10 +302,4 @@ class AdminController extends Controller
         ));
     }
 
-<<<<<<< HEAD
-=======
-    function detailInformation() {
-        return view('layouts.detailInformation');
-    }
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646
 }

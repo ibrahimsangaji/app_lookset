@@ -84,7 +84,6 @@ Route::middleware(['auth'])->group(function() {
     Route::put('softwares/{software}', [SoftwareController::class, 'update'])->name('software.update');
     Route::delete('softwares/{software}', [SoftwareController::class, 'destroy'])->name('software.delete');
 
-<<<<<<< HEAD
     Route::get('assets',[AdminController::class, 'assets']);
     Route::get('assets/delete',[AdminController::class, 'deleteAssets'])->name('asset.deleteView');
     Route::get('assets/{id}/edit',[AdminController::class, 'editAssets'])->name('asset.edit');
@@ -92,33 +91,6 @@ Route::middleware(['auth'])->group(function() {
     Route::delete('assets/{asset}', [AdminController::class, 'delete'])->name('asset.delete');
 
     Route::get('inventorys',[AdminController::class, 'inventorys']);
-=======
-    Route::get('/assets',[AdminController::class, 'assets']);
-    Route::get('/assets/delete',[AdminController::class, 'deleteAssets']);
-    Route::delete('/assets/{asset}', [AdminController::class, 'destroy'])->name('asset.delete');
-
-    Route::get('/inventorys',[AdminController::class, 'inventorys']);
-
-    Route::get('/locations',[AdminController::class, 'locations']);
-    Route::get('/locations/detail',[AdminController::class, 'detailLocations']);
-    Route::get('/locations/update',[AdminController::class, 'updateLocations']);
-    Route::get('/locations/edit',[AdminController::class, 'editLocations']);
-    Route::get('/locations/information',[AdminController::class, 'detailInformation']);
-
-    Route::get('/inbounds', [AdminController::class, 'inbound'])->name('inbound.index');
-    Route::post('/inbound', [AsetController::class, 'inbound'])->name('inbound.process');
-    Route::get('/returns', [AdminController::class, 'return'])->name('return.index');
-    Route::post('/return', [AsetController::class, 'return'])->name('return.process');
-
-    Route::get('/documents', [DocumentController::class, 'showDocuments'])->name('documents.index');
-    Route::get('/documents/create', [DocumentController::class, 'createDocumentsFromApprovedAssets'])->name('documents.create');
-    Route::get('/documents/{document}/detail', [DocumentController::class, 'detailDocuments'])->name('documents.detail');
-    Route::get('/documents/{document}/download', [DocumentController::class, 'showPdf'])->name('documents.downloadPdf');
-
-    Route::get('/approval', [ApprovalController::class, 'index'])->name('approval.index');
-    Route::post('/approval/{id}', [ApprovalController::class, 'processApproval'])->name('approval.process');
-    Route::get('/approval/{asset}/detail', [ApprovalController::class, 'detailDocuments'])->name('asset.detail');
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646
 
     Route::get('locations',[AdminController::class, 'locations']);
     Route::get('locations/{location}/detail',[AdminController::class, 'detailLocations'])->name('locations.index');

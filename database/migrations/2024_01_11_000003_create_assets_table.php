@@ -19,15 +19,7 @@ return new class extends Migration
             $table->unsignedBigInteger('device_id');
             $table->unsignedBigInteger('software_id')->nullable();
             $table->unsignedBigInteger('category_statuses_id');
-<<<<<<< HEAD:database/migrations/2024_01_11_000003_create_assets_table.php
             $table->text('explanation');
-=======
-            $table->unsignedBigInteger('conditions_id');
-            $table->text('explanation')->nullable();
-            $table->string('approval_status')->default('Pending');
-            $table->unsignedBigInteger('create_user_id');
-            $table->unsignedBigInteger('approval_user_id')->nullable();
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646:database/migrations/2024_01_16_053734_create_assets_table.php
             $table->timestamps();
 
             $table->foreign('asset_number')->references('asset_number')->on('inbounds');

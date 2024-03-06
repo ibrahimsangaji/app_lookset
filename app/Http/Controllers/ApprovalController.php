@@ -35,12 +35,7 @@ class ApprovalController extends Controller
             // Update transaction approval status
             $transaction->update([
                 'approval_status' => $request->action,
-<<<<<<< HEAD
                 'approval_by' => $user->id,
-=======
-                'category_statuses_id' => ($request->action == 'Approved') ? $this->getCategoryStatusId($asset->conditions_id) : $asset->category_statuses_id,
-                'approval_user_id' => $user->id,
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646
             ]);
 
             if ($request->action === 'Approved') {
@@ -92,11 +87,7 @@ class ApprovalController extends Controller
             $message = ($request->action == 'Approved') ? 'Approval' : 'Reject';
             return redirect()->route($redirectRoute)->with('success', "{$message} processed successfully");
         } catch (\Exception $e) {
-<<<<<<< HEAD
             return redirect()->route('approval.index')->with('error', 'Failed to process approval. Error: ' . $e->getMessage());
-=======
-            return redirect()->route('approval.index')->with('success', 'Approval processed successfully');
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646
         }
     }
 
@@ -194,7 +185,6 @@ class ApprovalController extends Controller
 
     public function index()
     {
-<<<<<<< HEAD
         auth()->user()->unreadNotifications->where('id', request('id'))->first()?->update(['title' => 'font-weight-normal']);
 
         try {
@@ -228,10 +218,6 @@ class ApprovalController extends Controller
         } catch (\Exception $e) {
             return redirect()->route('approval.index')->with('error', 'Failed to retrieve details. Error: ' . $e->getMessage());
         }
-=======
-        $approvals = Asset::where('approval_status', 'Pending')->get();
-        return view('layouts.approval', compact('approvals'));
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646
     }
 
     public function detailDocuments(Asset $asset) {

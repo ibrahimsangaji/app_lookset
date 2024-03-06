@@ -2,11 +2,7 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
 use App\Models\Division;
-=======
-use App\Models\Location;
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 

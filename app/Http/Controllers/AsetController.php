@@ -43,13 +43,7 @@ class AsetController extends Controller
                 'rack_id' => $request->rack_id,
                 'category_statuses_id' => $categoryStatusId,
                 'conditions_id' => $conditionId,
-<<<<<<< HEAD
                 'created_by' => $byUser->id,
-=======
-                'explanation' => $request->explanation,
-                'create_user_id' => $user->id,
-                'asset_number' => $assetNumber,
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646
             ]);
 
             Asset::create([
@@ -68,11 +62,7 @@ class AsetController extends Controller
             }
 
             // Tentukan rute pengalihan berdasarkan peran user
-<<<<<<< HEAD
             $redirectRoute = ($byUser->role == 'staff') ? 'inbound.index' : 'approval.index';
-=======
-            $redirectRoute = ($user->role == 'staff') ? 'inbound.index' : 'approval.index';
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646
 
             return redirect()->route($redirectRoute)->with('success', 'Asset successfully added');
         } catch (\Exception $e) {
@@ -169,20 +159,15 @@ class AsetController extends Controller
     public function outbound(Request $request, $asset_number)
     {
         $request->validate([
-<<<<<<< HEAD
             'asset_number' => [
                 'required',
                 Rule::exists('assets', 'asset_number')->whereIn('category_statuses_id', [1, 5]),
             ],
-=======
-            'asset_number' => 'required',
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646
             'pic' => 'required',
             'location_id' => 'required',
         ]);
 
         try {
-<<<<<<< HEAD
             $asset = Asset::where('asset_number', $request->asset_number)
                 ->whereIn('category_statuses_id', [1,5])->firstOrFail();
 
@@ -219,27 +204,6 @@ class AsetController extends Controller
             $redirectRoute = ($byUser->role === 'staff') ? 'outbound.index' : 'approval.index';
 
             return redirect()->route($redirectRoute)->with('success', 'Outbound successfully added');
-=======
-            $asset = Asset::findOrFail($asset_number);
-
-            // Logika untuk membuat nomor STO secara otomatis
-            $lastOutbound = Asset::latest('sto_number')->first();
-            $nextNumber = $lastOutbound ? intval(substr($lastOutbound->sto_number, 4)) + 1 : 1;
-            $stoNumber = 'STO-' . str_pad($nextNumber, 6, '0', STR_PAD_LEFT);
-
-            // Berikan nilai untuk category_statuses_id dan conditions_id
-            $categoryStatusId = 4;
-            $conditionId = 6;
-
-            // Proses Outbound
-            $asset->update([
-                'sto_number' => $stoNumber,
-                'category_statuses_id' => $categoryStatusId,
-                'conditions_id' => $conditionId,
-            ]);
-
-            return redirect()->route('outbound.index')->with('success', 'Outbound successfully added');
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646
         } catch (\Exception $e) {
             return redirect()->route('outbound.index')->with('error', 'Failed to add outbound. Error: ' . $e->getMessage());
         }

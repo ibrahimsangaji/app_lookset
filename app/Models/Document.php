@@ -46,7 +46,6 @@ class Document extends Model
         return $this->belongsTo(Condition::class, 'conditions_id');
     }
 
-<<<<<<< HEAD
     public function division()
     {
         return $this->belongsTo(Division::class, 'locations_id');
@@ -72,12 +71,4 @@ class Document extends Model
         return $this->belongsTo(User::class, 'approval_by');
     }
 
-=======
-    public function device()
-    {
-        return $this->belongsTo(Device::class, 'device_id');
-    }
-
-    public $timestamps = true;
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646
 }

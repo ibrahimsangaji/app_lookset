@@ -29,7 +29,6 @@
     <!-- Custom styles for this page -->
     <link href="{{ asset('page') }}/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
-<<<<<<< HEAD:resources/views/tampilan.blade.php
     <style>
         .notif {
             white-space: normal;
@@ -41,9 +40,6 @@
             min-width: 20rem;
         }
     </style>
-=======
-    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646:resources/views/body.blade.php
 </head>
 <body>
     <!-- Page Wrapper -->
@@ -66,7 +62,6 @@
                             <a class="nav-link dropdown-toggle" href=" " id="alertsDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
-<<<<<<< HEAD:resources/views/tampilan.blade.php
                                 @php
                                     $unreadCount = auth()->user()->unreadNotifications->where('title', 'font-weight-bold')->count();
                                 @endphp
@@ -103,72 +98,6 @@
                                         Show All Notification
                                     </a>
                                 </div>
-=======
-                                <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter">2+</span>
-                            </a>
-                            <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="alertsDropdown">
-                                <h6 class="dropdown-header">
-                                    Notification
-                                </h6>
-                                @if (auth()->user()->role == 'supervisor')
-                                    <a class="dropdown-item d-flex align-items-center" href="#">
-                                        <div class="mr-3">
-                                            <div class="icon-circle bg-warning">
-                                                <i class="fas fa-exclamation-triangle text-white"></i>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="small text-gray-500">December 16, 2023</div>
-                                            <span class="font-weight-bold">
-                                                There is ASN-000003 data that needs to be processed
-                                            </span>
-                                        </div>
-                                    </a>
-                                @endif
-                                @if (auth()->user()->role == 'staff')
-                                    <a class="dropdown-item d-flex align-items-center" href="#">
-                                        <div class="mr-3">
-                                            <div class="icon-circle bg-primary">
-                                                <i class="fas fa-file-alt text-white"></i>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="small text-gray-500">December 16, 2023</div>
-                                            <span class="font-weight-bold">
-                                                Document data has been created new DocN-000003
-                                            </span>
-                                        </div>
-                                    </a>
-                                @endif
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-primary">
-                                            <i class="fas fa-file-alt text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 12, 2023</div>
-                                        <span class="font-weight-bold">
-                                            Document data has been created new DocN-000002
-                                        </span>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-primary">
-                                            <i class="fas fa-file-alt text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 7, 2023</div>
-                                        Document data has been created new DocN-000001
-                                    </div>
-                                </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
->>>>>>> b1e0aae16abcedcd620b668dd20bd0ce8843d646:resources/views/body.blade.php
                             </div>
                         </li>
 
